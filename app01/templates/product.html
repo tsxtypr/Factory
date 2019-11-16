@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>荣波矿粉加工厂</title>
+{% endblock %}
+
+
+{% block content %}
+		<div id="contentbg">
+		<div class="aboutusbg3"></div>
+       <!-- content-->
+       <div id="pcontent">
+          <div class="contentleft">
+          	  <div class="cpzx">
+                	<div class="cptitle"><a href="javascript:void(0);"></a></div>
+                    <div class="cplist">
+                      <ul>
+                          {% for product in products %}
+                       <li><a href="/app01/product_info/{{ product.id }}">{{ product.product_name }}</a></li>
+                            {% endfor %}
+                      </ul>
+                    </div>
+              </div>
+			  <div class="lxwm">
+			     <div class="lxwmtitle"></div>
+				 <div class="lxwmcon">
+					<p>地址：海南省定安县海榆中线49公里处</p>
+					<p>电话：13800000000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13200000000</p>
+					<p>邮箱：00000000@qq.com</p>
+					<p>Q  Q：00000000</p>
+				 </div>
+			  </div>
+              <div class="contact">
+				<div class="contactbar">
+				</div>
+			  <a href="/app01/map" class="mappic" alt="点击查看地图">
+			  <img  class="zoom" src="/static/images/icon_zoom.png" />
+			  <div class="maplink">点击查看地图</div>
+			  </a>
+			  <!--
+              		<p>联系我们</p>
+                    <span>地址：海南省定安县新竹镇新序墟</span>
+                    <span>电话：13876328569</span>
+			 -->
+              </div>
+
+          </div>
+          <div class="pcontentright">
+				<div id="product">
+				   <div class="producttitle"></div>
+
+                    {% for product in page_obj %}
+				       <a name="fsf"></a>
+						<div id="#fsf" class="productcon">
+							<div class="productimg">
+                                <a href="/app01/product_info/{{ product.id }}"><img src="/static{{ product.picture }}" /></a>
+							</div>
+
+							<div class="productjs">
+								<div class="jsname"><span>产品名称：</span>{{ product.product_name }}</div>
+								<div class="jcjs"><span>产品描述：</span>
+									<p>
+									{{ product.product_desc | truncatechars:"20" }}
+									</p>
+									</div>
+								<div class="usage">
+									<span>产品用途：</span>
+									<p>{{ product.product_use }}</p>
+								</div>
+							</div>
+
+
+						</div>
+                    {% endfor %}
+
+
+                    <div class="pager" style="float: right;">{{ page }}/{{ paginator.num_pages }}页
+
+                        <a href="/app01/product/1">首 页</a>
+
+                        {% if page_obj.has_previous %}
+                        <a href="/app01/product/{{ page_obj.previous_page_number }}">上一页</a>
+                        {% endif %}
+
+                        {% if page_obj.has_next %}
+                        <a href="/app01/product/{{ page_obj.next_page_number }}"> 下一页 </a>
+                        {% endif %}
+
+                        <a href="/app01/product/{{ paginator.num_pages }}">末 页</a>
+                    </div>
+
+
+				</div>
+          </div>
+       </div>
+	   </div>
+	   <div style="clear:both;"></div>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/style/other.css" />
+{% endblock %}
+
+{% block script %}
+<script src="/static/js/jquery.js" type="text/javascript"></script>
+<script src="/static/js/other.js" type="text/javascript"></script>
+{% endblock %}
+
+
+
+
+

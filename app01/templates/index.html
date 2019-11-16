@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>荣波矿粉加工厂</title>
+{% endblock %}
+
+{% block content %}
+<div id="contentbg">
+        <div id="show">
+           <div id="listshow">
+         			<a href="#"><img src="/static/images/1.jpg"  /></a>
+         			<a href="#"><img src="/static/images/2.jpg"  /></a>
+        			<a href="#"><img src="/static/images/3.jpg"  /></a>
+         			<a href="#"><img src="/static/images/4.jpg"  /></a>
+   			</div>
+       </div>
+       <!-- content-->
+       <div id="content">
+          <div class="contentleft">
+          	  <div class="cpzx">
+                	<div class="cptitle"><a href="product.html"></a></div>
+                    <div class="cplist">
+                      <ul>
+                          {% for product in products %}
+                       <li><a href="/app01/product_info/{{ product.id }}">{{ product.product_name }}</a></li>
+                            {% endfor %}
+                      </ul>
+                    </div>
+              </div>
+
+              <div class="contact">
+				<div class="contactbar">
+				</div>
+			  <a href="/app01/map" class="mappic" alt="点击查看地图">
+			  <img  class="zoom" src="/static/images/icon_zoom.png" />
+			  <div class="maplink">点击查看地图</div>
+			  </a>
+			  <!--
+              		<p>联系我们</p>
+                    <span>地址：海南省定安县新竹镇新序墟</span>
+                    <span>电话：13876328569</span>
+			 -->
+              </div>
+
+          </div>
+          <div class="contentright">
+          		<div class="gsjs">
+				<h2><a href="aboutus.html"></a></h2>
+                	<img src="/static/images/gsjs.png" />
+                    <div class="gsjstext">
+					<span>荣波矿粉加工厂</span>
+                    <p>
+					荣波矿粉加工厂创办于1996年，是一家以生产建筑装修材料为主的私营工厂。本厂先后定址于海南的琼中、澄迈和屯昌等地，
+					并于2005年迁至海南定安县新竹镇新序，至今已有18年经营历史。近年来，本厂发展迅速，加工规模逐渐扩大，加工工艺日益成熟。
+					工厂主要以加工石英砂、石英粉、双飞粉、石灰石粉、矿粉、过虑水石、腻石粉、粉煤灰和沸石粉等。本厂加工的产品品质优良，销路不断扩大，
+					在当地拥有良好的口碑。随着工厂产品销量的增加，扩大工厂规模，增加工厂人数 、增加产量和完善工厂管理是发展本厂的必经之路。
+					为了更好的发展本厂，宣传本厂，我厂负责人开通了专门的门户网站，希望在宣传本厂的同时能得到广大岛民的支持！
+					</p>
+                    </div>
+                </div>
+                <!--pic-->
+                <div id="floatpic">
+                <div class="pictitle"><a href="product.html"></a></div>
+                <div id="pichezi" class="pichezi" >
+				<div id="piccontent">
+                <div id="hezi1" class="hezi">
+                	<ul>
+                   		<li><a href="product.html#fsf"><img src="/static/images/product/1.jpg" /><p>沸石粉</p></a></li>
+                        <li><a href="product.html#fmh"><img src="/static/images/product/2.jpg" /><p>粉煤灰</p></a></li>
+                        <li><a href="product.html#nzf"><img src="/static/images/product/4.jpg" /><p>腻子粉</p></a></li>
+                        <li><a href="product.html#sff"><img src="/static/images/product/5.jpg" /><p>石灰石粉</p></a></li>
+                        <li><a href="product.html#syf"><img src="/static/images/product/6.jpg" /><p>石英粉</p></a></li>
+                        <li><a href="product.html#sys"><img src="/static/images/product/7.jpg" /><p>石英砂</p></a></li>
+                        <li><a href="product.html#shsf"><img src="/static/images/product/8.jpg" /><p>双飞粉</p></a></li>
+                	</ul>
+                </div>
+				<div id="hezi2" class="hezi"></div>
+                </div>
+				</div>
+                </div>
+          </div>
+       </div>
+	   </div>
+{% endblock %}
+
+{% block script %}
+<script src="/static/js/jquery.js" type="text/javascript"></script>
+<script src="/static/js/jquery.KinSlideshow-1.2.1.min.js" type="text/javascript"></script>
+<script src="/static/js/index.js" type="text/javascript"></script>
+{% endblock %}

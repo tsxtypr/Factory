@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>荣波矿粉加工厂</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/style/other.css" />
+{% endblock %}
+
+{% block script %}
+<script src="/static/js/jquery.js" type="text/javascript"></script>
+<script src="/static/js/other.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+		<div id="contentbg">
+		<div class="aboutusbg"></div>
+       <!-- content-->
+       <div id="content">
+          <div class="contentleft">
+          	  <div class="cpzx">
+                	<div class="cptitle"><a href="product.html"></a></div>
+                    <div class="cplist">
+                      <ul>
+                      {% for product in products %}
+                       <li><a href="/app01/product_info/{{ product.id }}">{{ product.product_name }}</a></li>
+                            {% endfor %}
+                      </ul>
+                    </div>
+              </div>
+			  <div class="lxwm">
+			     <div class="lxwmtitle"></div>
+				 <div class="lxwmcon">
+					<p>地址：海南省定安县海榆中线49公里处</p>
+					<p>电话：13800000000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13200000000</p>
+					<p>邮箱：00000000@qq.com</p>
+					<p>Q  Q：00000000</p>
+				 </div>
+			  </div>
+              <div class="contact">
+				<div class="contactbar">
+				</div>
+			  <a href="/app01/map" class="mappic" alt="点击查看地图">
+			  <img  class="zoom" src="/static/images/icon_zoom.png" />
+			  <div class="maplink">点击查看地图</div>
+			  </a>
+			  <!--
+              		<p>联系我们</p>
+                    <span>地址：海南省定安县新竹镇新序墟</span>
+                    <span>电话：13876328569</span>
+			 -->
+              </div>
+
+          </div>
+          <div class="contentright">
+          		<div id="jszxnews">
+					<div class="jszxtitle"></div>
+					<div class="newscon">
+					<div class="newtitle">{{ article.news_title }}</div>
+					<P>
+					{{ article.news_desc }}
+					</p>
+					<div class="newsxx">
+                        {% if privious_num != 0 %}
+                        <p>上一篇：<a href="/app01/jszx_news/{{ privious_num }}">{{ privious_article.news_title }}</a></p>
+                        {% endif %}
+                    {% if next_num != end %}
+					<p>下一篇：<a href="/app01/jszx_news/{{ next_num }}">{{ next_article.news_title }}</a></p></div>
+                    {% endif %}
+				</div>
+          </div>
+       </div>
+	   </div>
+	   <div style="clear:both;"></div>
+{% endblock %}
+
+
+
+
+
+
+
+
+

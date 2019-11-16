@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>荣波矿粉加工厂</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/style/other.css" />
+{% endblock %}
+
+{% block script %}
+    <script src="/static/js/other.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+		<div id="contentbg">
+		<div class="aboutusbg"></div>
+       <!-- content-->
+       <div id="content">
+          <div class="contentleft">
+          	  <div class="cpzx">
+                	<div class="cptitle"><a href="product.html"></a></div>
+                    <div class="cplist">
+                      <ul>
+                          {% for product in products %}
+                       <li><a href="/app01/product_info/{{ product.id }}">{{ product.product_name }}</a></li>
+                            {% endfor %}
+                      </ul>
+                    </div>
+              </div>
+			  <div class="lxwm">
+			     <div class="lxwmtitle"></div>
+				 <div class="lxwmcon">
+					<p>地址：海南省定安县海榆中线49公里处</p>
+					<p>电话：13800000000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13200000000</p>
+					<p>邮箱：123456789@qq.com</p>
+					<p>Q  Q：123456789</p>
+				 </div>
+			  </div>
+              <div class="contact">
+				<div class="contactbar">
+				</div>
+			  <a href="/app01/map" class="mappic" alt="点击查看地图">
+			  <img  class="zoom" src="/static/images/icon_zoom.png" />
+			  <div class="maplink">点击查看地图</div>
+			  </a>
+			  <!--
+              		<p>联系我们</p>
+                    <span>地址：海南省定安县新竹镇新序墟</span>
+                    <span>电话：13876328569</span>
+			 -->
+              </div>
+
+          </div>
+          <div class="contentright">
+          		<div id="gsjs">
+				<h2></h2>
+                	<img src="/static/images/gs2.jpg" />
+					<img src="/static/images/gs1.jpg" />
+					<img src="/static/images/yyzz2.jpg" />
+					<img src="/static/images/yyzz1.jpg" />
+                    <div class="gsjstext">
+                    <p>
+					荣波矿粉加工厂创办于1996年，是一家以生产建筑装修材料为主的私营工厂。本厂先后定址于海南的琼中、澄迈和屯昌等地，
+					并于2005年迁至海南定安县新竹镇新序，至今已有18年经营历史。近年来，本厂发展迅速，加工规模逐渐扩大，加工工艺日益成熟。
+					工厂主要以加工石英砂、石英粉、双飞粉、石灰石粉、矿粉、过虑水石、腻石粉、粉煤灰和沸石粉等。本厂加工的产品品质优良，销路不断扩大，
+					在当地拥有良好的口碑。随着工厂产品销量的增加，扩大工厂规模，增加工厂人数 、增加产量和完善工厂管理是发展本厂的必经之路。
+					为了更好的发展本厂，宣传本厂，我厂负责人开通了专门的门户网站，希望在宣传本厂的同时能得到广大岛民的支持！
+					</p>
+					<span>（2014年8月）</span>
+                    </div>
+                </div>
+          </div>
+       </div>
+	   </div>
+	   <div style="clear:both;"></div>
+{% endblock %}
+
+
